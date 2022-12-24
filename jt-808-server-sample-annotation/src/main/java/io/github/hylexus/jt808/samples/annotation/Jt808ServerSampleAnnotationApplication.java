@@ -1,6 +1,6 @@
 package io.github.hylexus.jt808.samples.annotation;
 
-import io.github.hylexus.jt808.boot.annotation.EnableJt808ServerAutoConfig;
+import io.netty.util.ResourceLeakDetector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,10 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author hylexus
  */
 @SpringBootApplication
-@EnableJt808ServerAutoConfig
 public class Jt808ServerSampleAnnotationApplication {
 
     public static void main(String[] args) {
+        // for testing purposes only
+        ResourceLeakDetector.setLevel(ResourceLeakDetector.Level.PARANOID);
         SpringApplication.run(Jt808ServerSampleAnnotationApplication.class, args);
     }
 
