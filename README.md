@@ -12,6 +12,7 @@
 .
 ├── jt-808-server-sample-annotation     ## 基于注解的示例
 ├── jt-808-server-sample-bare           ## 空项目 quick-start 示例
+├── jt-808-server-sample-bare-boot2     ## 空项目 quick-start 示例(spring-boot-2.x)
 ├── jt-808-server-sample-customized     ## 定制化需求示例
 ├── jt-808-server-sample-mixed-version  ## 混合版本支持示例
 └── pom.xml
