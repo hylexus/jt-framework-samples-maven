@@ -3,6 +3,7 @@ package io.github.hylexus.jt808.samples.annotation.msg.resp;
 import io.github.hylexus.jt.jt808.support.annotation.msg.resp.Jt808ResponseBody;
 import io.github.hylexus.jt.jt808.support.annotation.msg.resp.ResponseField;
 import io.github.hylexus.jt.jt808.support.data.MsgDataType;
+import io.github.hylexus.jt.jt808.support.data.type.byteseq.ByteArrayContainer;
 import io.netty.buffer.ByteBuf;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -39,12 +40,12 @@ public class RespTerminalSettings {
         private int bytesCountOfContentLength;
 
         @ResponseField(order = 3, dataType = BYTES)
-        private ByteBuf msgContent;
+        private ByteArrayContainer msgContent;
 
-        public ParamItem(int msgId, ByteBuf msgContent) {
+        public ParamItem(int msgId, ByteArrayContainer msgContent) {
             this.msgId = msgId;
+            this.bytesCountOfContentLength = msgContent.length();
             this.msgContent = msgContent;
-            this.bytesCountOfContentLength = msgContent.readableBytes();
         }
     }
 

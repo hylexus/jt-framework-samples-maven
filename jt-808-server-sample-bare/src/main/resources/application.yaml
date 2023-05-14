@@ -6,6 +6,12 @@ jt808:
       enabled: true
     request-handlers:
       enabled: true
+  features:
+    program-param-printer:
+      enabled: false
+      pretty: true
+    request-filter:
+      enabled: false
 logging:
   level:
     root: info
