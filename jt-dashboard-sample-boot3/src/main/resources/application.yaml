@@ -8,8 +8,8 @@ jt-dashboard:
       enabled: true
       jt1078-applications:
         - name: ${spring.application.name}
-          base-url: http://101.43.46.146:1078
-          host: 101.43.46.146
+          base-url: http://node2:1078
+          host: node2
           http-port: 1078
           tcp-port: 61078
           udp-port: 0
