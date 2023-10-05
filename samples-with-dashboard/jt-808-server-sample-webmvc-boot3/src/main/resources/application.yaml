@@ -1,0 +1,63 @@
+server:
+  port: 808
+
+spring:
+  jackson:
+    time-zone: Asia/Shanghai
+  application:
+    name: jt-808-server-sample-webmvc-boot3
+
+jt808:
+  server:
+    port: 6808
+    idle-state-handler:
+      reader-idle-time: 10m
+      #writer-idle-time: 0s
+      #all-idle-time: 0s
+      enabled: true
+  built-components:
+    component-statistics:
+      enabled: true
+    request-handlers:
+      enabled: true
+  msg-processor:
+    executor-group:
+      thread-count: 2
+      pool-name: 808-msg-processer
+      max-pending-tasks: 128
+  request-sub-package-storage:
+    type: caffeine
+    caffeine:
+      ttl: 30s
+  response-sub-package-storage:
+    type: caffeine
+    caffeine:
+      maximum-size: 30
+      ttl: 3m
+    redis:
+      ttl: 3m
+## [可选] jt-dashboard 配置(依赖 jt-dashboard-client-spring-boot-starter)
+jt-dashboard:
+  client:
+    jt808:
+      enabled: true
+      name: ${spring.application.name}
+      base-url: http://localhost:808
+      server-url: http://localhost:9090
+      metadata:
+        role: 808-server
+        notes: demo1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    jt808-simple-metrics:
+      enabled: true
+
+logging:
+  level:
+    root: info
+    io.github.hylexus: info

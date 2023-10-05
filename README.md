@@ -14,6 +14,7 @@
 ├── jt-808-server-sample-bare           ## 空项目 quick-start 示例(spring-boot-2.x)
 ├── jt-808-server-sample-bare-boot3     ## 空项目 quick-start 示例(spring-boot-3.x)
 ├── jt-808-server-sample-customized     ## 定制化需求示例(spring-boot-2.x)
+├── samples-with-dashboard              ## 和 jt-dashboard 整合的示例(spring-boot-3.x)
 └── pom.xml
 ```
 
